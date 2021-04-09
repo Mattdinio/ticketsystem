@@ -1,18 +1,40 @@
-<!doctype html>
+{% extends 'base.html'%}
 
-<html lang="en">
-<head>
-  <meta charset="utf-8">
+{% block title %}
+#{{ ticket.id}} - {{ ticket.ticketName | capfirst}}
+{% endblock %}
 
-  <title>ticket detail</title>
-  <meta name="ticket detail">
-  <meta name="Matt Jeal" >
-
-  <link rel="stylesheet" href="css/styles.css?v=1.0">
-
-</head>
-
-<body>
-    <p>ooohh ticket detail</p>
-</body>
-</html>
+{% block content %}
+<div id = 'ticketInfo'>
+<div id = 'ticketTable'>
+    <table>
+        <tr>
+            <th id = 'tableHeading' colspan="2">#{{ ticket.id}} - {{ ticket.ticketName | capfirst}} </th>
+        </tr>
+        <tr>
+            <th id = 'tableHeading'>Ticket Status: </th>
+            <th id = 'tablecontent'>{{ ticket.ticketStatus }} </th>
+        </tr> 
+        <tr>
+            <th id = 'tableHeading'>Customer Name: </th>
+            <th id = 'tablecontent'>{{ ticket.customer | capfirst}} </th>
+        </tr>
+        <tr>
+            <th id = 'tableHeading'>Device: </th>
+            <th id = 'tablecontent'>{{ ticket.device | capfirst}} </th>
+        </tr>
+        <tr>
+            <th id = 'tableHeading'>Created On: </th>
+            <th id = 'tablecontent'>{{ ticket.createdDate | date:" H:i,  D d M Y"}} </th>
+        </tr>
+        <tr>
+            <th id = 'tableHeading'>Last Updated: </th>
+            <th id = 'tablecontent'>{{ ticket.lastUpdated | date:" H:i,  D d M Y"}} </th>
+        </tr>
+        <tr>
+            <th id = 'tableHeading'>Description: </th>
+            <th id = 'tablecontent'>{{ ticket.ticketDescription}} </th>
+        </tr>     
+    </table>
+</div>
+{% endblock %}

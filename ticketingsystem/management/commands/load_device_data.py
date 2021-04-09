@@ -1,6 +1,6 @@
 from csv import DictReader as dr
 from django.core.management import BaseCommand
-from ticketingsystem.models import Device
+from ticketingsystem.models import Device, Customer
 
 
 loaded_error_message = """

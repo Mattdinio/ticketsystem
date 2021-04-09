@@ -1,19 +1,31 @@
-<!doctype html>
+{% extends 'base.html'%}
 
-<html lang="en">
-<head>
-  <meta charset="utf-8">
+{% block title %}
+Dashboard
+{% endblock %}
 
-  <title>Dashboard</title>
-  <meta name="Dashboard">
-  <meta name="Matt Jeal" >
-
-  <link rel="stylesheet" href="css/styles.css?v=1.0">
-
-</head>
-
-<body>
-
-    <p>this is a dashboard</p>
-</body>
-</html>
+{% block content %}
+<h1>Welcome to the dashboard</h1>
+<div id = 'ticketTable'>
+    <table style = "width:100%">
+        <tr>
+        <th id = 'tableHeading'>Ticket Number: </th>
+        <th id = 'tableHeading'>Ticket Name: </th> 
+        <th id = 'tableHeading'>Customer: </th>
+        <th id = 'tableHeading'>Created on: </th>
+        <th id = 'tableHeading'>last updated: </th>
+        <th id = 'tableHeading'>status: </th>
+        </tr>
+            {% for ticket in tickets %}
+                <tr>
+                <th id = 'tableContent'> <a href = "{% url 'Ticket_Detail' ticket.id %}"> {{ticket.id}}  </a></th> 
+                <th id = 'tableContent'> <a href = "{% url 'Ticket_Detail' ticket.id %}">{{ticket.ticketName | capfirst}} </a>  </th>
+                <th id = 'tableContent'>{{ticket.customer | capfirst}} </th> 
+                <th id = 'tableContent'>{{ticket.createdDate | date:"d/m/Y, H:i "}} </th>
+                <th id = 'tableContent'>{{ticket.lastUpdated | date:"d/m/Y, H:i "}} </th>
+                <th id = 'tableContent'>{{ticket.ticketStatus | capfirst}} </th>
+                </tr>
+            {% endfor %}
+    </table>
+</div>
+{% endblock %}

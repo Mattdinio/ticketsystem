@@ -15,20 +15,6 @@ class Device(models.Model):
     class meta:
         ordering = ['deviceMake']
 
-class Ticket(models.Model):
-    TICKET_STATUS = [('Open', 'Open'), ('Waiting on Customer', 'Waiting on Customer'), ('Waiting for Parts', 'Waiting for Parts'), ('Closed', 'Closed')]
-    ticketName = models.CharField(max_length=100)
-    device = models.ForeignKey(Device, on_delete=models.CASCADE)
-    createdDate = models.DateTimeField(auto_now_add=True, editable=False)
-    lastUpdated = models.DateTimeField(auto_now=True)
-    ticketDescription = models.TextField()
-    ticketStatus = models.CharField(max_length=30, choices=TICKET_STATUS)
-
-    def __str__(self):
-        return self.ticketName
-
-    class meta:
-        ordering = ['-id']
 
 
 class CommonPeopleInfo(models.Model):
@@ -49,3 +35,18 @@ class Customer(CommonPeopleInfo):
     def __str__(self):
         return self.firstName + ' ' + self.lastName
 
+class Ticket(models.Model):
+    TICKET_STATUS = [('Open', 'Open'), ('Waiting on Customer', 'Waiting on Customer'), ('Waiting for Parts', 'Waiting for Parts'), ('Closed', 'Closed')]
+    ticketName = models.CharField(max_length=100)
+    device = models.ForeignKey(Device, on_delete=models.PROTECT)
+    customer = models.ForeignKey(Customer, on_delete=models.PROTECT)
+    createdDate = models.DateTimeField(auto_now_add=True, editable=False)
+    lastUpdated = models.DateTimeField(auto_now=True)
+    ticketDescription = models.TextField()
+    ticketStatus = models.CharField(max_length=30, choices=TICKET_STATUS)
+
+    def __str__(self):
+        return self.ticketName
+
+    class meta:
+        ordering = ['-id']
