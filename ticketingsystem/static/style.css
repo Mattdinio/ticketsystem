@@ -1,6 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500&display=swap');
+
 /* HTML WIDE */
 html{
-  background-color: #000000;
+  background-color: #333333;
+}
+
+body {
+  margin: 0em;
+  display: block;
 }
 
 #parent-container {
@@ -9,49 +16,71 @@ html{
 }
 
 #header{
-  padding: 2rem;
   grid-column: 1 / 4;
   background-color: #000000;
-  background-image: linear-gradient(180deg, #000000 0%, #414141 75%);
-  color:#FFFFFF;
-  text-align: right;
-  text-shadow: -0.0625em 0.0625em 0.1875em #333333,
-                0.0625em 0.0625em 0.1875em #000000;
+  background-image: linear-gradient(180deg, #000000 0%, #333333 75%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem, 10%;
 }
 
-#logo {
+.logo {
   display: inline-block;
   text-align: left;
+  padding-left: 1vw;
 }
 
+.links {
+  list-style: none;
+  padding-right: 4.5vw;
+}
 
-
-#header nav{
+.links li{
   display: inline-block;
-  text-align: right;
+  padding: 0px 1em;
+
+}
+
+.links li a {
+  color: #FFFFFF;  
+  transition: all 0.3s ease 0s;
+  font-family: 'Poppins', sans-serif;
+  font-size: 2em;
+  text-decoration: none;
+  text-shadow: #000000;
+}
+
+.links li a:hover{
+  color: #225599;  
+  transition: all 0.3s ease 0s;
 }
 
 #left-block {
   grid-column: 1 / 2;
   background-color: #333333;
+  width: 5vw;
 }
 
 #right-block {
   grid-column: 3 / 4;
   background-color: #333333;
+  width: 5vw;
 }
 
 
 #main-content-block{
   grid-column: 2 / 3;
-  background-color: #FFFFFF;
+  background-color: #AAAAAA;
+  box-shadow: 0px 0px 1em #333333 inset;
+  height: 85vh;
 }
 
 #footer {
   grid-column: 1 / 4;
-  background-color: #000000;
-  background-image: linear-gradient(180deg, #000000 0%, #414141 75%);
+  background-color: #333333;
   color:#FFFFFF;
+  font-family: 'Poppins', sans-serif;
   text-align: center;
   text-shadow: -0.0625em 0.0625em 0.1875em #333333,
                 0.0625em 0.0625em 0.1875em #000000;

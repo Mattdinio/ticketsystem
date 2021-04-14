@@ -5,13 +5,20 @@ Dashboard
 {% endblock %}
 
 {% block content %}
-<h1>Welcome to the dashboard</h1>
+{% load static %}
+<link rel="stylesheet" href="{% static 'dashboard.css' %}">
+<h1 id = "dashTitle">Welcome to the dashboard</h1>
+<span  id = "ticketbar">
+    <a href="/dashboard/create-ticket/" class="button" title="Add a Ticket"> + Add a Ticket</a>
+</span>
+<hr>
 <div id = 'ticketTable'>
-    <table style = "width:100%">
+    <table id = "dashTable">
         <tr>
         <th id = 'tableHeading'>Ticket Number: </th>
         <th id = 'tableHeading'>Ticket Name: </th> 
         <th id = 'tableHeading'>Customer: </th>
+        <th id = 'tableHeading'>Assigned To: </th>
         <th id = 'tableHeading'>Created on: </th>
         <th id = 'tableHeading'>last updated: </th>
         <th id = 'tableHeading'>status: </th>
@@ -21,6 +28,7 @@ Dashboard
                 <th id = 'tableContent'> <a href = "{% url 'Ticket_Detail' ticket.id %}"> {{ticket.id}}  </a></th> 
                 <th id = 'tableContent'> <a href = "{% url 'Ticket_Detail' ticket.id %}">{{ticket.ticketName | capfirst}} </a>  </th>
                 <th id = 'tableContent'>{{ticket.customer | capfirst}} </th> 
+                <th id = 'tableContent'> Gandalf </th> 
                 <th id = 'tableContent'>{{ticket.createdDate | date:"d/m/Y, H:i "}} </th>
                 <th id = 'tableContent'>{{ticket.lastUpdated | date:"d/m/Y, H:i "}} </th>
                 <th id = 'tableContent'>{{ticket.ticketStatus | capfirst}} </th>

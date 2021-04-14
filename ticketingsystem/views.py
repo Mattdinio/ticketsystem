@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views import generic
 from django.http import HttpResponse, Http404
 from .models import Ticket,Customer,Device
+from .forms import *
 
 def home (request):
     return render(request, 'home.html')
@@ -11,6 +12,9 @@ def dashboard (request):
     return render (request, 'dashboard.html', {
        'tickets' : tickets,
     })
+
+def dashboardList(ListView):
+    model = Ticket
 
 def ticket_detail (request, ticket_id):
     try:
@@ -30,3 +34,9 @@ class ticketView(generic.ListView):
 #class ticketDetail(generic.DetailView):
     #model = Ticket
     #template_name = '/dashboard/1/.html'
+
+
+def createTicket(request):
+    form = ticketForm()
+    context = {'form':form.as_p}
+    return render(request, 'create-ticket.html', context)

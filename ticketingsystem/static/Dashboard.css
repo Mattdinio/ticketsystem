@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500&display=swap');
+
+
+#dashTitle{
+  padding-left: 4.5vw;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 0px;
+  color: #225599;  
+  display: inline-block;
+}
+#ticketbar{
+  float: right;
+  padding-right: 5vw;
+  margin-bottom: 1vh;
+  margin-top: 1vh;
+}
+
+.button {
+  background-color: #225599;
+  border: none;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+ hr {
+  text-align: center;
+  width: 90%;
+  border-top: 0.1em solid #333333;
+}
+
+#dashTable {
+  width: 100%;
+  padding-left: 3vw;
+} 
+
+#tableHeading {
+  font-family: 'Poppins', sans-serif;
+  color: #225599;  
+
+}
+
+#tableContent {
+  font-family: 'Poppins', sans-serif;
+  color: #000000;
+  font-weight: 400;  
+}
+
+#tableContent a {
+  color: #000000;
+  text-underline-offset: 0.1em;
+}
