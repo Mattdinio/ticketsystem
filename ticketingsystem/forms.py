@@ -1,5 +1,5 @@
 from django.forms import ModelForm
-from .models import Customer, Device, Ticket
+from .models import Customer, Ticket
 
 class customerForm(ModelForm):
     class Meta:

@@ -1,9 +1,103 @@
-{% extends 'base.html'%}
-
-{% block title %}
-Home
-{% endblock %}
-
-{% block content %}
-<h1>this is the Home</h1>
-{% endblock %}
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title> {% block title %} Home {% endblock %}</title>
+  <link rel="icon" type="image/png" href=".\static\images\favicon.png"/>
+  <meta name="Home">
+  <meta name="Matt Jeal" >
+  <link rel="stylesheet" href="{% static 'homestyle.css' %}">
+</head>
+<body>
+  <div id = "parent-container">
+    <header id = "header">
+      <div id = logoContainer>
+        <a id = "logoLink" href="/"><img class = "logo" src = "/static/images/RCC.png" alt = "logo"> </a>
+      </div>
+      <nav id = "nav">
+        <ul class = "links">
+          <li> <a href="/dashboard/"> Dashboard </a></li>
+        </ul>
+      </nav>
+  </header>
+  <div id = "left-block">
+  </div>
+  <div id = "main-content-block", name="maincontent">
+        <h1>Welcome to Right Click Computing</h1>
+        <div class = 'img-container'>
+            <img id = 'shopfront' src = '/static/images/RCC-front.jpg' alt = 'shop front'>
+        </div>
+        <div id=content>
+        <p>
+            We Buy, Sell and Repair a wide range of Laptops, Desktops, Mobiles and Games Consoles
+        </p>
+        <div class = 'table'>
+            <table class="tg">
+                <thead>
+                  <tr>
+                    <th>We Buy:</th>
+                    <th>We Sell:</th>
+                    <th>We Repair:</th>
+                    <th>Our Services</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                        <ul id = 'Buy'>
+                        <li>Desktops </li>
+                        <li>Laptops</li>
+                        <li>Desktops / Laptop parts </li>
+                        <li>Retro Games Consoles </li>
+                        <li>Mobile Phones </li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul id = 'Sell'>
+                        <li>Full Desktops set ups </li>
+                        <li>Laptops</li>
+                        <li>Computer Peripherals (Mice, Keyboards, webcams, USB Flash Drives etc) </li>
+                        <li>Computer Hardware (Hard Drives, Memory, Wireless cards etc) </li>
+                        <li>Computer Accessories (Mouse Mats, USB gadgets Etc) </li>
+                        <li>Computer Consumables ( Blank CDS & DVDS) </li>
+                        <li>AVG ™ Anti Virus Internet Security 2013 & Other software </li>
+                        <li>Mobile Phones </li>
+                        <li>Retro Games Consoles </li>
+                    </ul>
+                </td>
+                    <td>
+                        <ul id = 'Repair'>
+                        <li>Desktops set ups </li>
+                        <li>Laptops</li>
+                        <li>Mobile Phones </li>
+                        <li>Games Consoles </li>
+                        <li>iPods </li>
+                    </ul>
+                </td>
+                    <td>
+                        <ul id = Services>
+                        <li>Full Computer Service (Anti Virus Scan, Spyware Scan,Thermal Paste & cleaning inside & out.) </li>
+                         <li>Factory Settings Special (Windows Reinstall, Thermal Paste & Cleaning inside & out)</li>
+                         <li>Windows Reinstall </li>
+                         <li>Desktop & Laptop Upgrading </li>
+                         <li>Data Back up & Transfers </li>
+                         <li>Mobile Phone Unlocking (For BlackBerry, Iphone, Samsung, LG, Old Nokias, ZTE) </li>
+                         <li>Password Removal (Windows Log-on, iPods, iPhones) </li>
+                         <li>Parental Control Removal on Dsi See less </li>
+                         </ul>
+                    </td>
+                  </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    </div>
+    <div id = "right-block">
+    </div>
+    <footer id = "footer">
+      <p> UP834942 || Final Year Project: IT Ticketing System for Small IT repair shops</p>
+    </footer>
+    </div>
+</body>
+</html>

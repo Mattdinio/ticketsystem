@@ -1,0 +1,53 @@
+{% extends 'base.html'%}
+
+{% block title %}
+#{{ ticket.id}} - {{ ticket.ticketName | capfirst}}
+{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+<div id = 'ticketInfo'>
+<div id = 'ticketTable'>
+    <table>
+        <tr>
+            <th id = 'tableHeading' colspan="2">#{{ ticket.id}} - {{ ticket.ticketName | capfirst}} </th>
+        </tr>
+        <tr>
+            <th id = 'tableHeading'>Ticket Status: </th>
+            <th id = 'tablecontent'>{{ ticket.ticketStatus }} </th>
+        </tr> 
+        <tr>
+            <th id = 'tableHeading'>Customer Name: </th>
+            <th id = 'tablecontent'>{{ ticket.customer | capfirst}} </th>
+        </tr>
+        <tr>
+            <th id = 'tableHeading'>Assigned Technician: </th>
+            <th id = 'tablecontent'>{{ ticket.assigned | capfirst}} </th>
+        </tr>
+        <tr>
+            <th id = 'tableHeading'>Device Make: </th>
+            <th id = 'tablecontent'>{{ ticket.deviceMake | capfirst}} </th>
+        </tr>
+        <tr>
+            <th id = 'tableHeading'>Device: </th>
+            <th id = 'tablecontent'>{{ ticket.deviceModel | capfirst}} </th>
+        </tr>
+        <tr>
+            <th id = 'tableHeading'>Created On: </th>
+            <th id = 'tablecontent'>{{ ticket.createdDate | date:" H:i,  D d M Y"}} </th>
+        </tr>
+        <tr>
+            <th id = 'tableHeading'>Last Updated: </th>
+            <th id = 'tablecontent'>{{ ticket.lastUpdated | date:" H:i,  D d M Y"}} </th>
+        </tr>
+        <tr>
+            <th id = 'tableHeading'>Description: </th>
+            <th id = 'tablecontent'>{{ ticket.ticketDescription}} </th>
+        </tr>     
+    </table>
+</div>
+</div>
+{% else %}
+    <h1 id = "nolog"> You are not logged in! Please login to view this ticket </h1>
+{% endif %}
+{% endblock %}

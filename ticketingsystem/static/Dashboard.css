@@ -1,32 +1,34 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500&display=swap');
 
+#ticketbar{
+  padding-top: 1.5vh;
+  padding-bottom: 1vh;
+}
 
 #dashTitle{
-  padding-left: 4.5vw;
-  font-family: 'Poppins', sans-serif;
-  margin-bottom: 0px;
-  color: #225599;  
-  display: inline-block;
-}
-#ticketbar{
-  float: right;
-  padding-right: 5vw;
-  margin-bottom: 1vh;
   margin-top: 1vh;
+  margin-bottom: 1vh;
+   margin-left: 4vw;
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(25px, 3.5vw, 60px);
+  color: #225599;  
+  float: left;
+  border: none;
 }
+
 
 .button {
   background-color: #225599;
   border: none;
   color: white;
   font-family: 'Poppins', sans-serif;
-  padding: 15px 32px;
+  padding: 1.5vh 1.5vw;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
+  font-size: 1vw;
+  margin: 1.5vh 5vw;
   cursor: pointer;
+  float: right;
 }
 
  hr {
@@ -38,6 +40,7 @@
 #dashTable {
   width: 100%;
   padding-left: 3vw;
+  padding-right: 3vw;
 } 
 
 #tableHeading {

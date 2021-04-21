@@ -5,11 +5,13 @@ Add a Ticket
 {% endblock %}
 
 {% block content %}
-
-<form action  ="" method = "POST">
-        {%csrf_token %}
-        {{form}}
-    <input type ="submit" name = "submit">
-</form>
-
+{% if user.is_authenticated %}
+    <form action ="" method = "POST">
+            {%csrf_token %}
+            {{form}}
+        <input type ="submit" name = "submit">
+    </form>
+{% else %}
+    <h1 id = "nolog"> You are not logged in! Please login to create a ticket </h1>
+{% endif %}
 {% endblock %}

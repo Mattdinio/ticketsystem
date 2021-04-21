@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'crispy_forms',
+    'django_filters',
     #user apps
     'ticketingsystem',
 ]
@@ -123,6 +124,9 @@ USE_TZ = True
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 STATIC_URL = '/static/'
+
+LOGIN_REDIRECT_URL = "/dashboard/"
+LOGOUT_REDIRECT_URL = "/"
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')

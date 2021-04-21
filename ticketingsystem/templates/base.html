@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8">
   <title> {% block title %} Home {% endblock %}</title>
+  <link rel="icon" type="image/png" href=".\static\images\favicon.png"/>
   <meta name="Home">
   <meta name="Matt Jeal" >
   <link rel="stylesheet" href="{% static 'style.css' %}">
@@ -11,13 +12,25 @@
 <body>
   <div id = "parent-container">
     <header id = "header">
-      <a href="/dashboard"><img class = "logo" src = "/static/images/logo.png" alt = "logo"> </a>
+      <div id = logoContainer>
+        <a id = "logoLink" href="/"><img class = "logo" src = "/static/images/RCC.png" alt = "logo"> </a>
+      </div>
       <nav id = "nav">
+        {% if user.is_authenticated %}
         <ul class = "links">
           <li> <a href="/dashboard/"> Dashboard </a></li>
           <li> <a href="/dashboard/"> My tickets </a></li>
-          <li> <a href="/dashboard/"> Customers </a></li>
+          <li> <a href="/customer_list/"> Customers </a></li>
         </ul>
+        <div id = login-container> 
+          <p id = 'loggedin'> logged in as: {{ user.get_username }}</p>
+          <p id = 'logout'> <a href="/logout/"> Logout </a></p>
+        </div>
+        {% else %}
+        <ul class = "links">
+          <li> <a href="/login/"> Login </a></li>
+        </ul>
+        {% endif %}
       </nav>
   </header>
   <div id = "left-block">
