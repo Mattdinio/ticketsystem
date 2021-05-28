@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500&display=swap');
+
+/* HTML WIDE */
+html{
+  background-color: #FFFFFF;
+}
+
+
+body {
+  margin: 0em;
+  display: block;
+}
+
+#parent-container {
+  display: grid;
+  grid-template: auto 1fr auto / auto 1fr auto;
+}
+
+#footer {
+  background-color: #FFFFFF;
+}
+
+#logoLink {
+  display:inline-block;
+  max-width:100%;
+  max-height:100%;
+}
+
+.links {
+  list-style: none;
+  padding-right: 4.5vw;
+  margin-bottom: 0em;
+  margin-top: 0em;
+  font-size: 1.5vw;
+  transition: all 0.3s ease 0s; 
+}
+
+.links li{
+  display: inline-block;
+  padding: 0px .5vw;
+
+}
+
+#loginForm{
+  text-align: center;  
+}
+
+#loginForm input{
+  width:80%
+}
+.button {
+  background-color: #225599;
+  border: none;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  padding: 1.5vh 1.5vw;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1vw;
+  margin: 1.5vh 5vw;
+  margin-left:0;
+  cursor: pointer;
+  float: right;
+}
+
+
+#main-content-block{
+  grid-column: 2 / 3;
+  background-color: #FFFFFF;
+  box-shadow: none;
+  height: 85vh;
+}
+
+
+
+#nolog{
+  color:#225599;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+}
+
+#ticketInfo {
+  text-align: -webkit-center;
+}
+
+#ticketTable {
+  font-family: 'Poppins', sans-serif;
+  color: #225599;
+  font-weight: bold;
+  font-size: 1.5em;
+  width: max-content;  
+}
+
+#ticketTable button, #submit {
+  background-color: #225599;
+  border: none;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1vw;
+  padding: 1em;
+  display: inline-block;
+  width: 100%;
+}
+
+#ticketTable p {
+  text-align: left;
+  align-content: right;
+}
+
+#ticketTable input, select, textarea {
+  display: list-item;
+  padding-left: 1em;
+  width: 100%;
+}
+
+.hidden{
+  font-family: 'Poppins', sans-serif;
+  color: #225599;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+#hiddenlogo{
+  height: 200px;
+  width: auto;
+  display: inline-flex;
+}
+
+.hidden h2{ 
+  display: inline-flex;
+}
+#rect {
+  border-color: #225599;
+  border-style: solid;
+  border-width: 5px;
+  height: 100px;
+  width: 200px;
+}
+
+#rect h1{
+  text-align: left;
+  padding-left: 10px;
+}
+
+
+@media print {
+  #header, #footer, #nav, #left-block, #right-block, #print, #submit, button {
+    height: 0px;
+    width: 0px;
+    font-size: 0px;
+    visibility: hidden;
+    background-color: #FFFFFF;
+  }
+}
+

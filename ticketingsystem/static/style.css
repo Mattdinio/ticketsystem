@@ -59,6 +59,36 @@ body {
 
 }
 
+#loginForm{
+  text-align: center;  
+}
+
+#loginForm input{
+  width:80%
+}
+.button {
+  background-color: #225599;
+  border: none;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  padding: 1.5vh 1.5vw;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1vw;
+  margin: 1.5vh 5vw;
+  margin-left:0;
+  cursor: pointer;
+  float: right;
+}
+
+.button:hover{
+  background-color: #14335c;
+}
+
+#login {
+  float:none;
+}
+
 .links a{
   color: #FFFFFF; 
   font-family: 'Poppins', sans-serif;
@@ -81,7 +111,7 @@ body {
   font-weight: 200;
 }
 
-#loggedin, #logout{
+#loggedin, #logout, #admin{
   color: #FFFFFF; 
   font-family: 'Poppins', sans-serif;
   font-size: 1vw;
@@ -90,13 +120,19 @@ body {
   padding-left: 1vw;
 }
 
-#logout a{
+
+#logout a, #admin a{
   text-decoration: none;
   color: #FFFFFF; 
 }
 
 #logout a:hover{
   color: #225599;  
+  transition: all 0.3s ease 0s;
+}
+
+#admin a:hover{
+  color: #910000;  
   transition: all 0.3s ease 0s;
 }
 
@@ -118,6 +154,7 @@ body {
   background-color: #AAAAAA;
   box-shadow: 0px 0px 1em #333333 inset;
   height: 85vh;
+  overflow-y:auto
 }
 
 #footer {
@@ -134,4 +171,75 @@ body {
   color:#225599;
   font-family: 'Poppins', sans-serif;
   text-align: center;
+}
+
+
+#ticketTable, #objectForm {
+  font-family: 'Poppins', sans-serif;
+  color: #225599;
+  font-weight: bold;
+
+}
+
+/* Ticket Details Specific */
+
+
+#ticketInfo {
+  text-align: -webkit-center;
+}
+
+#objectForm{
+  font-size: 1.25em;
+  width: max-content;  
+}
+
+
+
+#submit:hover{
+  background-color: #14335c;
+
+}
+
+#objectForm p {
+  text-align: left;
+  align-content: right;
+
+}
+
+#objectForm input, select, textarea {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.75em;
+  display: list-item;
+  padding-left: 1em;
+  width: 100%;
+}
+
+#objectForm button, #submit {
+  background-color: #225599;
+  border: none;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1em !important;
+  padding: 1em;
+  display: inline-block;
+  width: 100%;
+}
+/* Hidden for Printing */
+
+#print {
+  margin-top: 1em;
+  
+}
+
+#print:hover{
+  background-color: #14335c;
+
+}
+.hidden {
+  height: 0px;
+  width: auto;
+  display: inline-flex;
+  font-size: 0px;
 }

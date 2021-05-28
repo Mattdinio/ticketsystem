@@ -94,9 +94,9 @@ body {
 
 .img-container {
   height: 35vh;
-  margin-top:3vh;
-  margin-right: 3vw;
-  float: right;
+  text-align: center;
+  padding-top: 10%;
+  
 }
 
 #shopfront {
@@ -119,8 +119,8 @@ h1 {
   font-family: 'Poppins', sans-serif;
   font-size: clamp(25px, 3.5vw, 60px);
   color: #225599;  
-  float: left;
   border: none;
+  text-align: center;
 }
 #content {
   display: inline-grid;
@@ -130,9 +130,44 @@ h1 {
   float:left;
 }
 
-#Buy #Sell #Repair #Services li{
+#Buy #Sell #Repair #Services{
   font-family: 'Poppins', sans-serif;  
   color: #225599;
+}
+
+h2,  h3{
+    font-family: 'Poppins', sans-serif;  
+    color: #225599;
+    text-align: center;
+}
+
+
+#Buy, #Repair, 
+#Sell, #Services{
+  float: left;
+  width: 25%;
+  padding-left: 1%;
+  padding-right: 1%;
+  align-content: center;
+}
+
+#Buy, #Repair {
+  width: fit-content;
+}
+
+#Buy{
+  padding-left: 5%;
+  
+}
+
+th {
+  font-family: 'Poppins', sans-serif;  
+  color: #225599;
+}
+
+li {
+  font-family: 'Poppins', sans-serif;  
+  text-align: left;
 }
 
 #footer {

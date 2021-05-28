@@ -1,0 +1,41 @@
+{% extends 'base.html'%}
+
+{% block title %}
+Stock List
+{% endblock %}
+
+{% block content %}
+{% load static %}
+{% if user.is_authenticated %}
+    <link rel="stylesheet" href="{% static 'dashboard.css' %}">
+    <span  id = "ticketbar">
+    <h1 id = "dashTitle">Stocklist: </h1>
+        <a href="/stock_list/create_stock/" class="button" title="Add Inventory"> + Add an inventory item</a>
+    </span>
+    <hr>
+    <div id = 'ticketTable'>
+        <table id = "dashTable">
+            <tr>
+            <th id = 'tableHeading'>Item Name: </th>
+            <th id = 'tableHeading'>Quantity in stock: </th> 
+            <th id = 'tableHeading'>Price: </th>
+            <th id = 'tableHeading'>Order link: </th>
+            </tr>
+                {% for item in stock %}
+                    <tr>
+                        <th id = 'tableContent'> <a href = "{% url 'stock_edit' item.id %}"> {{item.itemName}}  </a>  </th>
+                        <th id = 'tableContent'>{{item.quantityInStock}} </th> 
+                        <th id = 'tableContent'>£{{item.price}} </th>
+                        {% if item.orderLink|length > 0 %} 
+                            <th id = 'tableContent'><a href="{{item.orderLink}}">link</a></th>
+                        {% else %}
+                            <th id = 'tableContent'></th>
+                        {% endif %}
+                    </tr>
+                {% endfor %}
+        </table>
+    </div>
+{% else %}
+    <h1 id = "nolog"> You are not logged in! Please login to see the Inventory List </h1>
+{% endif %}
+{% endblock %}

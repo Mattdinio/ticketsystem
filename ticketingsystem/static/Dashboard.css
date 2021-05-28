@@ -16,22 +16,7 @@
   border: none;
 }
 
-
-.button {
-  background-color: #225599;
-  border: none;
-  color: white;
-  font-family: 'Poppins', sans-serif;
-  padding: 1.5vh 1.5vw;
-  text-align: center;
-  text-decoration: none;
-  font-size: 1vw;
-  margin: 1.5vh 5vw;
-  cursor: pointer;
-  float: right;
-}
-
- hr {
+hr {
   text-align: center;
   width: 90%;
   border-top: 0.1em solid #333333;
@@ -42,6 +27,18 @@
   padding-left: 3vw;
   padding-right: 3vw;
 } 
+
+#stockTable {
+  display: flex;
+  margin-left: 3vw;
+  margin-right: 3vw;
+}
+
+.item {
+  padding-left: 1em;
+  padding-right: 1em;
+  display: inline-flex;
+}
 
 #tableHeading {
   font-family: 'Poppins', sans-serif;
@@ -59,3 +56,4 @@
   color: #000000;
   text-underline-offset: 0.1em;
 }
+

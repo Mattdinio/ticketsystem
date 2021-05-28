@@ -19,11 +19,15 @@
         {% if user.is_authenticated %}
         <ul class = "links">
           <li> <a href="/dashboard/"> Dashboard </a></li>
-          <li> <a href="/dashboard/"> My tickets </a></li>
+          <li> <a href="/my_tickets/"> My tickets </a></li>
           <li> <a href="/customer_list/"> Customers </a></li>
+          <li> <a href="/stock_list/"> Stock </a></li>
         </ul>
         <div id = login-container> 
           <p id = 'loggedin'> logged in as: {{ user.get_username }}</p>
+          {% if user.is_staff %}
+          <p id = 'admin'> <a href="/admin/"> Admin</a></p>
+          {% endif %}
           <p id = 'logout'> <a href="/logout/"> Logout </a></p>
         </div>
         {% else %}

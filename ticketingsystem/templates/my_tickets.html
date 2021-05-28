@@ -1,7 +1,7 @@
 {% extends 'base.html'%}
 
 {% block title %}
-Dashboard
+My Tickets
 {% endblock %}
 
 {% block content %}
@@ -9,7 +9,7 @@ Dashboard
 {% if user.is_authenticated %}
     <link rel="stylesheet" href="{% static 'dashboard.css' %}">
     <span  id = "ticketbar">
-    <h1 id = "dashTitle">Welcome to the dashboard: {{ user.get_username | capfirst }}</h1>
+    <h1 id = "dashTitle"> {{ user.get_username | capfirst }}'s tickets</h1>
         <a href="/dashboard/create-ticket/" class="button" title="Add a Ticket"> + Add a Ticket</a>
     </span>
     <hr>
@@ -24,16 +24,16 @@ Dashboard
             <th id = 'tableHeading'>last updated: </th>
             <th id = 'tableHeading'>status: </th>
             </tr>
-                {% for ticket in tickets %}
-                    <tr>
-                    <th id = 'tableContent'> <a href = "{% url 'Ticket_Detail' ticket.id %}"> {{ticket.id}}  </a></th> 
-                    <th id = 'tableContent'> <a href = "{% url 'Ticket_Detail' ticket.id %}">{{ticket.ticketName | capfirst}} </a>  </th>
-                    <th id = 'tableContent'>{{ticket.customer | capfirst}} </th> 
-                    <th id = 'tableContent'>{{ticket.assigned | capfirst}} </th> 
-                    <th id = 'tableContent'>{{ticket.createdDate | date:"d/m/Y, H:i "}} </th>
-                    <th id = 'tableContent'>{{ticket.lastUpdated | date:"d/m/Y, H:i "}} </th>
-                    <th id = 'tableContent'>{{ticket.ticketStatus | capfirst}} </th>
-                    </tr>
+                {% for ticket in ticketFilter %}
+                        <tr>
+                        <th id = 'tableContent'> <a href = "{% url 'Ticket_Detail' ticket.id %}"> {{ticket.id}}  </a></th> 
+                        <th id = 'tableContent'> <a href = "{% url 'Ticket_Detail' ticket.id %}">{{ticket.ticketName | capfirst}} </a>  </th>
+                        <th id = 'tableContent'>{{ticket.customer | capfirst}} </th> 
+                        <th id = 'tableContent'>{{ticket.assigned | capfirst}} </th> 
+                        <th id = 'tableContent'>{{ticket.createdDate | date:"d/m/Y, H:i "}} </th>
+                        <th id = 'tableContent'>{{ticket.lastUpdated | date:"d/m/Y, H:i "}} </th>
+                        <th id = 'tableContent'>{{ticket.ticketStatus | capfirst}} </th>
+                        </tr>
                 {% endfor %}
         </table>
     </div>

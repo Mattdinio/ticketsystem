@@ -5,16 +5,35 @@
 {% endblock %}
 
 {% block content %}
+{% load static %}
 {% if user.is_authenticated %}
+<link rel="stylesheet" href="{% static 'print.css' %}" media = "print">
 <div id = 'ticketInfo'>
-<div id = 'ticketTable'>
+<img class = "hidden" id="hiddenlogo" src = "/static/images/RCC.png" alt = "logo"> 
+<div id = 'objectForm'>
     <h1>{{ ticket.id}} - {{ ticket.ticketName | capfirst}}</h1>
         <form action  ="" method = "POST">
             {%csrf_token %}
             {{form}}
-        <input type ="submit" name = "submit">
+        <input id = "submit" type ="submit" name = "submit">
     </form>
+    <button id = "print" onclick="window.print()"> Print this page </button> 
 </div>
+    <table class ="hidden">
+        <tr>
+            <th id = 'tableHeading'>Customer Signature: </th>
+            <th id = 'tableHeading'>Technician Signature: </th> 
+            <th id = 'tableHeading'>Amount: </th>
+            <th id = 'tableHeading'>Date: </th> 
+        </tr>
+        <tr>
+            <th id = 'rect'> </th>
+            <th id = 'rect'></th> 
+            <th id = 'rect'><h1>£</h1></th>
+            <th id = 'rect'>{% now "SHORT_DATE_FORMAT" %} </th> 
+        </tr>
+  
+    </table>
 </div>
 {% else %}
     <h1 id = "nolog"> You are not logged in! Please login to view this ticket </h1>

@@ -1,7 +1,7 @@
 {% extends 'base.html'%}
 
 {% block title %}
-Dashboard
+Customer List
 {% endblock %}
 
 {% block content %}
@@ -10,12 +10,13 @@ Dashboard
     <link rel="stylesheet" href="{% static 'dashboard.css' %}">
     <span  id = "ticketbar">
     <h1 id = "dashTitle">Customer List:</h1>
-        <a href="/dashboard/create-customer/" class="button" title="Add a Customer"> + Add a Customer</a>
+        <a href="/customer_list/create_customer" class="button" title="Add a Customer"> + Add a Customer</a>
     </span>
     <hr>
     <div id = 'ticketTable'>
         <table id = "dashTable">
             <tr>
+            <th id = 'tableHeading'>Customer ID: </th>
             <th id = 'tableHeading'>First Name: </th>
             <th id = 'tableHeading'>Last Name: </th> 
             <th id = 'tableHeading'>Phone Number: </th>
@@ -28,7 +29,7 @@ Dashboard
                     <th id = 'tableContent'> {{customer.firstName | capfirst}} </th>
                     <th id = 'tableContent'>{{customer.lastName | capfirst}}  </th> 
                     <th id = 'tableContent'>{{customer.number}} </th> 
-                    <th id = 'tableContent'><a href = "mailto:">{{customer.email}} </a> </th>
+                    <th id = 'tableContent'><a href = "mailto:{{customer.email}}">{{customer.email}} </a> </th>
                     <th id = 'tableContent'>{{customer.address}} </th>
                     </tr>
                 {% endfor %}

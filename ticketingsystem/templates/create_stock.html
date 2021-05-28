@@ -1,0 +1,22 @@
+{% extends 'base.html'%}
+
+{% block title %}
+Add an inventory Item
+{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+<div id = 'ticketInfo'>
+    <div id = 'objectForm'>
+    <h1>Add a Inventory Item</h1>
+    <form action ="" method = "POST" enctype="multipart/form-data">
+            {%csrf_token %}
+            {{form}}
+        <input id="submit" type ="submit" name = "submit">
+    </form>
+    </div>
+</div>
+{% else %}
+    <h1 id = "nolog"> You are not logged in! Please login to add inventory </h1>
+{% endif %}
+{% endblock %}
