@@ -1,7 +1,8 @@
 from django.db import models
 from django.core.validators import RegexValidator
 from django.contrib.auth.models import User
-
+from django.core.validators import MinValueValidator
+ 
 class Customer(models.Model):
     firstName = models.CharField (max_length=50, verbose_name="First Name")
     lastName = models.CharField (max_length=50, verbose_name="Last Name")
@@ -44,8 +45,8 @@ class inventoryItem(models.Model):
     ('Tablet', 'Tablet'), ('Smart device', 'Smart Device'),('Monitor', 'Monitor'), ('Peripherals', 'Peripherals'), ('Component', 'Component'),('Accessory', 'Accessory'), ('Software', 'Software'), ('Other', 'Other')]
     itemName = models.CharField(max_length=150, verbose_name="Item Name")
     itemType = models.CharField(max_length = 50,choices=ITEM_TYPES,verbose_name="Item Type")
-    quantityInStock = models.IntegerField (verbose_name="In Stock")
-    price = models.DecimalField (decimal_places=2, max_digits=9, verbose_name="Price")
+    quantityInStock = models.PositiveIntegerField (verbose_name="In Stock")
+    price = models.DecimalField (decimal_places=2, validators=[MinValueValidator(0.00)], max_digits=9, verbose_name="Price")
     orderLink = models.URLField(blank = True, verbose_name="Order Link")
     lastOrdered = models.DateTimeField(auto_now=True, verbose_name="Last Ordered On")
 

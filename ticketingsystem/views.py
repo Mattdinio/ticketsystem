@@ -5,7 +5,6 @@ from .models import Ticket,Customer,inventoryItem
 from .forms import *
 from .filters import ticketFilter
 from django.contrib.auth.models import User
-import django_filters
 
 # Homepage
 def home (request):
