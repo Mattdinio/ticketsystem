@@ -11,14 +11,14 @@
 <div id = 'ticketInfo'>
 <img class = "hidden" id="hiddenlogo" src = "/static/images/RCC.png" alt = "logo"> 
 <div id = 'objectForm'>
-    <h1>{{ ticket.id}} - {{ ticket.ticketName | capfirst}}</h1>
+    <h1 id = ticketTitle>{{ ticket.id}} - {{ ticket.ticketName | capfirst}}</h1>
         <form action  ="" method = "POST">
             {%csrf_token %}
             {{form}}
         <input id = "submit" type ="submit" name = "submit">
     </form>
     <button id = "print" onclick="window.print()"> Print this page </button> 
-</div>
+    </div>
     <table class ="hidden">
         <tr>
             <th id = 'tableHeading'>Customer Signature: </th>

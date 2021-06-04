@@ -334,7 +334,7 @@ class testCustomerModelForm(TestCase):
         })
         self.assertTrue(form.is_valid())
 
-#This class tests the customer form's validation
+#This class tests the Ticket form's validation
 class testTicketModelForm(TestCase):
 
     def setUp(self):
@@ -466,8 +466,23 @@ class testTicketModelForm(TestCase):
         form = ticketForm(data = {
             'ticketName': 'Test',
             'deviceMake': 'HP',
-            'deviceModel' : 'Super Cool Awesome Mega Fantastic Fast Computer that is totally real',
+            'deviceModel' : 'Test',
             'deviceType' : '',
+            'customer' : customer,
+            'assigned' : user,
+            'ticketStatus' : 'Open',
+            'ticketDescription' : 'Help me'
+        })
+        self.assertFalse(form.is_valid())
+
+    def testDeviceTypeNonOption(self):
+        user = User.objects.get(id=1) 
+        customer = Customer.objects.get(id=1) 
+        form = ticketForm(data = {
+            'ticketName': 'Test',
+            'deviceMake': 'HP',
+            'deviceModel' : 'Test',
+            'deviceType' : 'Awesome',
             'customer' : customer,
             'assigned' : user,
             'ticketStatus' : 'Open',
@@ -481,7 +496,7 @@ class testTicketModelForm(TestCase):
         form = ticketForm(data = {
             'ticketName': 'Test',
             'deviceMake': 'HP',
-            'deviceModel' : 'Super Cool Awesome Mega Fantastic Fast Computer that is totally real',
+            'deviceModel' : 'Test',
             'deviceType' : 'Tablet',
             'customer' : '',
             'assigned' : user,
@@ -589,7 +604,7 @@ class testInventoryModelForm(TestCase):
             'itemName': 'Test Item',
             'itemType': 'Tablet',
             'quantityInStock' : 1,
-            'price' : 1.99,
+            'price' : 1.99, 
             'orderLink' : 'http://www.google.com',
         })
         self.assertTrue(form.is_valid())
@@ -726,7 +741,7 @@ class testInventoryModelForm(TestCase):
             'itemType': 'Tablet',
             'quantityInStock' : 1,
             'price' : 999999999999999.00,
-            'orderLink' : 'www.goog',
+            'orderLink' : 'hello',
         })
         self.assertFalse(form.is_valid())
 

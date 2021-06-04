@@ -68,7 +68,7 @@ body {
   grid-column: 2 / 3;
   background-color: #FFFFFF;
   box-shadow: none;
-  height: 85vh;
+  height: 80vh;
 }
 
 
@@ -83,33 +83,23 @@ body {
   text-align: -webkit-center;
 }
 
-#ticketTable {
+#objectForm {
   font-family: 'Poppins', sans-serif;
   color: #225599;
   font-weight: bold;
-  font-size: 1.5em;
-  width: max-content;  
+  font-size: 1em;
+  width: max-content;
+  height: min-content;  
 }
 
-#ticketTable button, #submit {
-  background-color: #225599;
-  border: none;
-  color: white;
-  font-family: 'Poppins', sans-serif;
-  text-align: center;
-  text-decoration: none;
-  font-size: 1vw;
-  padding: 1em;
-  display: inline-block;
-  width: 100%;
-}
 
-#ticketTable p {
+#objectForm p {
   text-align: left;
   align-content: right;
 }
 
-#ticketTable input, select, textarea {
+
+#objectForm input, select, textarea {
   display: list-item;
   padding-left: 1em;
   width: 100%;
@@ -122,8 +112,14 @@ body {
   font-size: 1em;
 }
 
+
+#ticketTitle {
+
+  font-size: 1em;
+}
+
 #hiddenlogo{
-  height: 200px;
+  height: 100px;
   width: auto;
   display: inline-flex;
 }
@@ -144,12 +140,31 @@ body {
   padding-left: 10px;
 }
 
+#objectform button {
+  padding: 0px;
+  margin: 0px;
+  height: 0px;
+  width: 0px;
+  font-size: 0px;
+  visibility: hidden;
+  background-color: #FFFFFF;
+}
 
 @media print {
   #header, #footer, #nav, #left-block, #right-block, #print, #submit, button {
     height: 0px;
     width: 0px;
     font-size: 0px;
+    visibility: hidden;
+    background-color: #FFFFFF;
+  }
+
+  #objectForm button, #submit {
+    height: 0px;
+    width: 0px;
+    font-size: 0px;
+    padding: 0px;
+    margin: 0px;
     visibility: hidden;
     background-color: #FFFFFF;
   }
